@@ -2327,7 +2327,7 @@
         var startYear = this.minDate ? get_year(this.minDate) : currentYear - this.yearsForSelect;
         var endYear = this.endDate ? get_year(this.endDate) : currentYear + this.yearsForSelect;
         for (var year = startYear; year <= endYear; year++) {
-            this$1.years.push(year);
+            this$1.years.push(year.toString());
         }
       },
       setupDatepicker: function setupDatepicker() {

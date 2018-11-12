@@ -697,7 +697,7 @@ return _c('td',{key:index + '_' + dayNumber,ref:("date-" + fullDate),refInFor:tr
       var startYear = this.minDate ? getYear(this.minDate) : currentYear - this.yearsForSelect;
       var endYear = this.endDate ? getYear(this.endDate) : currentYear + this.yearsForSelect;
       for (var year = startYear; year <= endYear; year++) {
-          this$1.years.push(year);
+          this$1.years.push(year.toString());
       }
     },
     setupDatepicker: function setupDatepicker() {
