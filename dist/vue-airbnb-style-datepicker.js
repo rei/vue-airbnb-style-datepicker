@@ -2050,7 +2050,7 @@
         this.generateMonths();
         this.generateYears();
       },
-      maxDate: function maxDate() {
+      endDate: function endDate() {
         this.generateYears();
       },
       datePropsCompound: function datePropsCompound(newValue) {
@@ -2327,7 +2327,7 @@
         this.years = [];
         var currentYear = get_year(this.startingDate);
         var startYear = this.minDate ? get_year(this.minDate) : currentYear - this.yearsForSelect;
-        var endYear = this.maxDate ? get_year(this.maxDate) : currentYear + this.yearsForSelect;
+        var endYear = this.endDate ? get_year(this.endDate) : currentYear + this.yearsForSelect;
         for (var year = startYear; year <= endYear; year++) {
             this$1.years.push(year);
         }
