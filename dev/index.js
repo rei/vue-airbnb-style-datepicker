@@ -28,10 +28,6 @@ Vue.use(AirBnbStyleDatepicker, {
     inRangeBorder: '#33dacd',
     disabled: '#fff',
   },
-  texts: {
-    apply: 'Tillämpa',
-    cancel: 'Avbryt',
-  },
 })
 
 // eslint-disable-next-line
