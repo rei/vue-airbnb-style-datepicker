@@ -38,7 +38,7 @@ new Vue({
 })
 ```
 
-The `options` is optional. It is only needed if you want to overwrite default colors, texts etc. For example if your site uses another language than english. **Note that `days` and `daysShort` always should start with Monday.** So if you want Sunday as the first day in the week, use `sundayFirst: true` (but days and daysShort should still start with Monday)
+The `options` is optional. It is only needed if you want to overwrite default colors, etc. For example if your site uses another language than english. **Note that `days` and `daysShort` always should start with Monday.** So if you want Sunday as the first day in the week, use `sundayFirst: true` (but days and daysShort should still start with Monday)
 
 ## [Use plugin](#use-plugin)
 
@@ -107,7 +107,6 @@ NB: Note that you need to wrap the datepicker in a `<div class="datepicker-trigg
 | monthNames        | Names of months in your language.<br>Type: Array<string>                                                                                                                                                                                                                                                                                                                                       |
 | dateLabelFormat   | Used to override the formatting string used for rendering aria labels. Defaults to 'dddd, MMMM D, YYYY'. <br>Type: String                                                                                                                                                                                                                                                                      |
 | colors            | Override default colors. Use hex values (#efefef)<br>Type: Object                                                                                                                                                                                                                                                                                                                              |
-| texts             | Override default texts (currently only "Cancel", "Apply", and "Keyboard shortcuts")<br>Type: Object                                                                                                                                                                                                                                                                                            |
 | ariaLabels        | Override default aria-label texts. Current options include chooseDate, chooseStartDate, chooseEndDate, selectedDate, unavailableDate, previousMonth, nextMonth, close, openKeyboardShortcutsMenu, and openKeyboardShortcutsMenu. Labels that end in `Date` are functions which accept a date string for constructing the label text, the rest of the labels are plain strings.<br>Type: Object |
 | keyboardShortcuts | Override the text/labels used inside the keyboard shortcuts menu                                                                                                                                                                                                                                                                                                                               | <br> Type: Array<object> |
 
@@ -141,11 +140,6 @@ Vue.use(AirBnbStyleDatepicker, {
     inRangeBorder: '#33dacd',
     disabled: '#fff',
     hoveredInRange: '#67f6ee'
-  },
-  texts: {
-    apply: 'Apply',
-    cancel: 'Cancel',
-    keyboardShortcuts: 'Keyboard Shortcuts',
   },
   ariaLabels: {
     chooseDate: (date) => date,
@@ -197,6 +191,9 @@ Vue.use(AirBnbStyleDatepicker, {
 | yearsForSelect           | Controls the number of years before/after the startingDate to be shown in the month/year select. Will use minDate/maxDate instead if those are available. <br>Type: Number, Default: 10           |
 | trigger                  | To programmatically show datepicker. For example if you want to open the datepicker by clicking some other HTML element. You manually need to reset this variable though in the @closed method.<br>Type: Boolean, Default: false |
 | closeAfterSelect         | Automatically close datepicker after all dates have been selected.<br>Type: Boolean, Default: false |
+| applyDatesText           | Override default Apply text (currently "Apply")<br>Type: String |
+| cancelDatesText          | Override default Cancel text (currently "Cancel")<br>Type: String |
+| keyboardShortcutsText    | Override default Keyboard Shortcuts text (currently "Keyboard Shortcuts")<br>Type: String |
 | @date-one-selected       | Event emitted when second date is selected.<br>Required                                                                                                                                                                          |
 | @date-two-selected       | Event emitted when second date is selected.<br>Required if using `mode="range"`                                                                                                                                                  |
 | @opened                  | Event emitted when datepicker is opened.                                                                                                                                                                                         |
@@ -236,6 +233,9 @@ Vue.use(AirBnbStyleDatepicker, {
   :show-action-buttons="true"
   :trigger="someBooleanDataProp"
   :close-after-select="true"
+  :apply-dates-text="'Apply text'"
+  :cancel-dates-text="'Cancel text'"
+  :keyboard-shortcuts-text="'Keyboard shortcuts text'"
   @date-one-selected="val => { dateOne = val }"
   @date-two-selected="val => { dateTwo = val }"
   @opened="onOpenedMethod"
